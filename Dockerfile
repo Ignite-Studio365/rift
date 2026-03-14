@@ -37,7 +37,7 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-RUN pip install -e . --no-deps
+RUN pip install --upgrade setuptools && pip install -e . --no-deps
 
 RUN addgroup --system rift \
     && adduser --system --ingroup rift --home /app riftuser \
